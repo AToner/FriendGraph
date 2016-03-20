@@ -24,11 +24,7 @@ class FriendGraph
   def get_friends(id)
     return unless @friends.include? id
 
-    node_distance = {}
-    @friends.keys.each do |friend_id|
-      node_distance[friend_id] = -1
-    end
-
+    node_distance = Hash.new(-1)
     node_distance[id] = 0
 
     result = {}
